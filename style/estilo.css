@@ -59,7 +59,7 @@ header > p {
     text-shadow: 0px 2px rgba(0, 0, 0, 0.534);
     max-width: 600px; /*aqui maximizou um tamanho do espaçamento, porém ele virou um bloco*/
     margin: auto; /*para centralizar o p que virou um bloco*/
-    margin-bottom: 20px; /*espaçamento para baixo*/
+    padding-bottom: 20px; /*espaçamento para baixo*/
     padding-right: 10px; /*espaçamento a direita*/
     padding-left: 10px; /*espaçamento a esquerda*/
     color: white;
@@ -69,7 +69,10 @@ nav {
     background-color: var(--cor5);
     padding: 10px;
     box-shadow: 0px 07px 9px rgba(0, 0, 0, 0.312); /*sombra abaixo da nav*/
-
+    text-align: center;
+}
+.no-wrap-link{ /*classe criada para o link não quebrar de linha*/
+    white-space: nowrap; /*não quebra a linha*/
 }
 nav > a {
     color: var(--cor1);
@@ -79,6 +82,7 @@ nav > a {
     font-weight: bold; /*deixou o texto em negrito*/
     transition-duration: 0.3s; /*transição do efeito hover, o tempo que irá fazer a transição*/
 }
+
 nav > a:hover{  /* pseudo-classe quando o mouse passa por cima aplica um estilo.*/
     background-color: var(--cor3); /*muda o fundo*/
     color: var(--cor5); /*vai mudar a cor do texto*/
