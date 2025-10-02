@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/*importada do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*font-face= fonte personalizada que você baixa*/
+@font-face {
+    font-family: 'Android'; /*nome que você quer nomear*/
+    src: url('/fontes/idroid.otf') format(opentype); /* opentype=.otf*/
+    font-weight: normal;
+}
+
+/*pseudo-classes (variáveis em css, que vai valer para o documento) isso faz com que você pode alterar a paleta de um site ou formatações de forma mais dinâmica*/
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive
+}
+/* o seletor "*" serve para todas as configurações dos elementos do html*/
+* {
+     margin: 0px;   /*vai remover todas as margens padrão dos elementos*/
+     padding: 0px; /* vai remover todos os preenchimentos internos padrão*/
+}
+
+body{
+    /*cor do fundo da página*/
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after{ /*depois do link com a class externo, vai aparecer o emoji*/
+    content: '\00A0\1F517';
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /*transição entre cores bottom(para baixo)*/
+    min-height: 150px; /*altura mínima(conteúdo interno maior(150px))*/
+    text-align: center; /*centralizou os textos*/
+    padding-top: 40px; /* espaçamento interno à cima*/
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-weight: normal;
+    font-size: 3em; /*aumentou o tamanho da fonte*/
+    margin-bottom: 20px; /*margem abaixo do título h1*/
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.534);
+}
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em; /*tamanho da fonte*/
+    text-shadow: 0px 2px rgba(0, 0, 0, 0.534);
+    max-width: 600px; /*aqui maximizou um tamanho do espaçamento, porém ele virou um bloco*/
+    margin: auto; /*para centralizar o p que virou um bloco*/
+    margin-bottom: 20px; /*espaçamento para baixo*/
+    padding-right: 10px; /*espaçamento a direita*/
+    padding-left: 10px; /*espaçamento a esquerda*/
+    color: white;
+
+}
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 07px 9px rgba(0, 0, 0, 0.312); /*sombra abaixo da nav*/
+
+}
+nav > a {
+    color: var(--cor1);
+    padding: 10px; /*espaçamento por dentro*/
+    border-radius: 5px; /*arredondamento nas laterais*/
+    text-decoration: none; /*none(removeu o sublinhado de links)*/
+    font-weight: bold; /*deixou o texto em negrito*/
+    transition-duration: 0.3s; /*transição do efeito hover, o tempo que irá fazer a transição*/
+}
+nav > a:hover{  /* pseudo-classe quando o mouse passa por cima aplica um estilo.*/
+    background-color: var(--cor3); /*muda o fundo*/
+    color: var(--cor5); /*vai mudar a cor do texto*/
+}
+main {
+    min-width: 300px; /*largura mínima do conteúdo*/
+    max-width: 800px; /*largura máxima do coteúdo*/
+    margin: auto; /*centraliza o conteúdo*/
+    margin-bottom: 20px; /* fez uma margem abaixo do conteúdo, separando do footer*/
+    padding: 20px; /*espaçamento interno*/
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.562); /*sombra em torno do conteúdo + utitlizado cor mais transparente. */
+    border-bottom-left-radius: 10px; /*arredondamento na parte de baixo (lado esquerdo)*/
+    border-bottom-right-radius: 10px; /*arredondamento na parte de baixo (lado direito)*/
+}
+main > article > h1 {
+    color: var(--cor5);
+    font-weight: normal;
+    font-family: var(--fonte-android);
+    font-size: 1.8em;
+}
+main > article> h2 {
+    color: var(--cor4);
+    font-weight: normal;
+    font-family: var(--fonte-android);
+    font-size: 1.3em; /* mudou o tamanho da fonte*/
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* sombreamento*/
+    text-indent: 8px;
+}
+
+main > article > p{
+    margin: 15px 0px; /*rotação relógio, 15px, cima e baixo, 0px esquerda e direita*/
+    text-align: justify; /*alinhamento dos textos*/
+    text-indent: 30px; /*recuo no início do parágrafo*/
+    font-size: 1em; /*tamanho da fonte*/
+    line-height: 2em; /*altura entre linhas do textos, o espaçamento na altura das linhas*/
+
+}
+
+main > article > p > strong{
+    color: var(--cor4); /*cor da fonte*/
+    
+}
+
+main > article > p > a{
+    text-decoration: none; /* tirar a decoração"none=nenhum"*/
+    font-weight: bold; /*negrito*/
+    color: var(--cor5);
+    background-color: var(--cor1); /*cor do fundo */
+    padding: 2px 6px; /*espaçamento do fundo*/
+}
+
+main a:hover{
+    text-decoration: underline; /*ao passar o mouse, uma linha do link aparece */
+    color: var(--cor4);
+}
+
+main > article img {
+    width: 100%; /*imagem se adptando pro tamanho da tela*/
+
+}
+main > article > img.pequena{
+    max-width: 350px; 
+    display: block; /*como a imagem não é um bloco, é necessário esse */
+    margin: auto; /*centralizou a imagem*/
+}
+/*Centralização do vídeo */
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+/*Centralização do vídeo */
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside{
+    background-color: var(--cor1); 
+    padding: 10px; /*espaçamento*/
+    border-radius: 10px; /*curvamento nas bordas*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.301);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin:  -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px; /*esquerda em cima, direira em cima, em baixo na direita, em baixo na esquerda */
+}
+
+aside > p{
+    margin: 15px 0px; /*rotação relógio, 15px, cima e baixo, 0px esquerda e direita*/
+    text-align: justify; /*alinhamento dos textos*/
+    text-indent: 30px; /*recuo no início do parágrafo*/
+    font-size: 1em; /*tamanho da fonte*/
+    line-height: 2em; /*altura entre linhas do textos, o espaçamento na altura das linhas*/
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /*mudança do emoji para mudar a bolinha da lista, 000A0 é espaço*/
+    list-style-position: inside; /*trouxe as "bolinhas" da lista para dentro*/
+    columns: 2; /*divide a lista em 2 colunas e*/
+
+}
+
+aside > p > a{
+     text-decoration: none; /* tirar a decoração"none=nenhum"*/
+    font-weight: bold; /*negrito*/
+    color: var(--cor5);
+    background-color: var(--cor1); /*cor do fundo */
+    padding: 2px 6px; /*espaçamento do fundo*/
+}
+
+aside a:hover{
+      text-decoration: underline; /*ao passar o mouse, uma linha do link aparece */
+    color: var(--cor4);
+}
+
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center; /*aliamento do texto */
+    font-size: 0.8em;  /*tamanho da fonte*/
+    padding: 5px; /*espaçamento*/
+}
+
+footer > p > a{
+    text-decoration: none; /*nenhuma decoração no link*/
+    color: white;
+    font-weight: bolder;
+}
+
+footer a:hover{
+    text-decoration: underline; /*ao passar o mouse, uma linha do link aparece */
+    color: var(--cor1);
+}
